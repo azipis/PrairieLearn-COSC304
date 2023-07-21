@@ -1,0 +1,18 @@
+{
+    "uuid": "4c9291cc-db7b-4d87-9329-c07416b65b49",
+    "title": "Question 1",
+    "topic": "Databases",
+    "tags": [
+        "rlawrence",
+        "Demo",
+        "RelaX"
+    ],
+    "type": "v3",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "node:8",
+        "serverFilesCourse": ["ra_autograder/"],
+        "entrypoint": "/grade/serverFilesCourse/ra_autograder/run.sh",
+        "timeout": 10
+    }
+}
