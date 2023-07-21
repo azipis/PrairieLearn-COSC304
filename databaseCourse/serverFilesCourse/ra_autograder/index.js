@@ -1,3 +1,5 @@
+console.log("test");
+
 const http = require('http');
 var express = require('express');
 var app = express();
@@ -16,6 +18,7 @@ try {
 
   // Parse the JSON data into a JavaScript object
   const dataObject = JSON.parse(jsonData);
+  console.log(dataObject)
 
   // Update the properties in the dataObject
   dataObject.score = 1;
