@@ -38,7 +38,7 @@ async function processData(database, submittedAnswer, correctAnswer) {
   try {
     var queriedCA = executeRelalg(correctAnswer, dataStuff);
 
-    dataSA = {
+    dataCA = {
       schema: queriedCA.getResult()._schema,
       rows: queriedCA.getResult()._rows
     };
