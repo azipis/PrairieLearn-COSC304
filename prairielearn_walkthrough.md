@@ -36,10 +36,8 @@ Unless your editing html or ejs files, everytime you make a change, you will hav
 
 ### [Getting PrairieLearn Running on an Apple Silicon Mac](https://github.com/PrairieLearn/PrairieLearn/discussions/8142)
 
-## Team A Running commands
+## Team A Running commands with a course
 
 1. Windows example: `docker run -it --rm -p 3000:3000 -w "/PrairieLearn" -v "%cd%:/PrairieLearn" -v "%cd%/databaseCourse:/course" prairielearn/prairielearn /bin/bash`
 2. `make deps`
 3. `make dev`
-
-docker run -it --rm -p 3000:3000 -w "/PrairieLearn" -v "%cd%:/PrairieLearn" -v "%cd%/databaseCourse:/course" -v "%cd%/pl_ag_jobs:/jobs" -e HOST_JOBS_DIR="%cd%/pl_ag_jobs" -v /var/run/docker.sock:/var/run/docker.sock --add-host=host.docker.internal:172.17.0.1 prairielearn/prairielearn /bin/bash

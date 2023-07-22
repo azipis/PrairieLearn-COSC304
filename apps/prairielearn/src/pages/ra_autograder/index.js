@@ -18,16 +18,35 @@ async function processData(database, submittedAnswer, correctAnswer) {
       dataStuff[key] = dataset[i];
   }
 
-  let queriedSA = executeRelalg(submittedAnswer, dataStuff);
-  let queriedCA = executeRelalg(correctAnswer, dataStuff);
+  var dataSA = {};
+  var dataCA = {};
 
-  let dataSA = {
-    schema: queriedSA.getResult()._schema,
-    rows: queriedCA.getResult()._rows
+  try {
+    var queriedSA = executeRelalg(submittedAnswer, dataStuff);
+
+    dataSA = {
+      schema: queriedSA.getResult()._schema,
+      rows: queriedSA.getResult()._rows
+    };
+
+  } catch (error) {
+    dataSA = {
+      error: error.message
+    }
   }
-  let dataCA = {
-    schema: queriedCA.getResult()._schema,
-    rows: queriedSA.getResult()._rows
+
+  try {
+    var queriedCA = executeRelalg(correctAnswer, dataStuff);
+
+    dataSA = {
+      schema: queriedCA.getResult()._schema,
+      rows: queriedCA.getResult()._rows
+    };
+
+  } catch (error) {
+    dataCA = {
+      error: error.message
+    }
   }
 
 
