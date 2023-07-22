@@ -773,6 +773,29 @@ module.exports.initExpress = function () {
   //////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////
+  // RelaX Autograder API //////////////////////////////////////////////
+
+  app.get('/ra_autoGrader', async (req, res) => {
+    try {
+      // Assuming the custom grading logic is in the index.js file
+      const processData = require('./pages/ra_autograder/index').processData;
+  
+      const { database, submittedAnswer, correctAnswer } = req.body;
+  
+      // Call the processData function to process the data
+      const result = await processData(database, submittedAnswer, correctAnswer);
+  
+      // Return the processed data as a response
+      res.json(result);
+    } catch (error) {
+      console.error('Error in /ra_autoGrader:', error.message);
+      res.status(500).json({ error: 'Something went wrong' });
+    }
+  });
+
+  //////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////
   // Instructor pages //////////////////////////////////////////////////
 
   // single assessment

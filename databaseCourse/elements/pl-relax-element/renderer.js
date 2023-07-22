@@ -179,6 +179,8 @@ $(document).ready(function () {
         table.append(createTableHeader(output.getResult()._schema, output.getResult()._rows)); // creates table headers
         table.append(createTableRows(output.getResult()._rows)); // fills table rows
         outputElm.append(table);
+        console.log("Schema: " + output.getResult()._schema)
+        console.log("Rows: " + output.getResult()._rows)
     }
     var ifDateChecker = [];
 

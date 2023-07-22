@@ -79,20 +79,20 @@ def parse(element_html, data):
     pass
 
 def grade(element_html, data):
-    pass
-    # # Grades the student's submission
-    # studentScore = grader.customGrader(data)
-    # # Places the student's score and other feedback into data.
-    # # Score cannot be directly modified in the element folder,
-    # # rather it must be placed within partial scores.
-    # # Updating final score is done automatically by PrairieLearn
-    # # based upon the partial scores.
-    # data['partial_scores']['RelaXEditor'] = {
-    #     'score': studentScore,
-    #     'weight': 1,
-    #     'feedback': "",
-    #     'marker_feedback': ""
-    # }
+
+    # Grades the student's submission
+    studentScore = grader.customGrader(data)
+    # Places the student's score and other feedback into data.
+    # Score cannot be directly modified in the element folder,
+    # rather it must be placed within partial scores.
+    # Updating final score is done automatically by PrairieLearn
+    # based upon the partial scores.
+    data['partial_scores']['RelaXEditor'] = {
+        'score': studentScore,
+        'weight': 1,
+        'feedback': "",
+        'marker_feedback': ""
+    }
 
 def test(element_html, data):
     pass

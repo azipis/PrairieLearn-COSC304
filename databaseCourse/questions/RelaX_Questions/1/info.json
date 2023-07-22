@@ -7,12 +7,5 @@
         "Demo",
         "RelaX"
     ],
-    "type": "v3",
-    "externalGradingOptions": {
-        "enabled": true,
-        "image": "node:8",
-        "serverFilesCourse": ["ra_autograder/"],
-        "entrypoint": "/grade/serverFilesCourse/ra_autograder/run.sh",
-        "timeout": 10
-    }
+    "type": "v3"
 }
